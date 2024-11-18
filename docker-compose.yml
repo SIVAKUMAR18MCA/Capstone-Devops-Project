@@ -1,0 +1,6 @@
+version: '3'
+services:
+  react-pro:
+    image: "reactapp"
+    ports:
+      - "80:80"
