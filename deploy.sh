@@ -9,17 +9,17 @@ if [ $GIT_BRANCH = "origin/dev" ]; then
     ./build.sh
 
     # Tag the Docker image for the dev environment
-    docker tag reactapp $DOCKER_USERNAME/dev
+    docker tag reactapp:siva $DOCKER_USERNAME/dev/reactapp:siva
 
     # Push the Docker image to the dev repository
-    docker push $DOCKER_USERNAME/dev
+    docker push $DOCKER_USERNAME/dev/reactapp:siva
 
 
     # Tag the Docker image for the prod environment
-    docker tag reactapp $DOCKER_USERNAME/prod
+    docker tag reactapp:siva $DOCKER_USERNAME/prod/reactapp:siva
 
     # Push the Docker image to the prod repository
-    docker push $DOCKER_USERNAME/prod
+    docker push $DOCKER_USERNAME/prod/reactapp:siva
 else 
     echo "Branch-not recognized. No build or push will occur."
     exit 1
